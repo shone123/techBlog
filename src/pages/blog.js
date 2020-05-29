@@ -1,6 +1,7 @@
 import React from 'react'
 
-import BlogRoll from '../components/blog_roll'
+import BlogRoll from '../components/BlogRoll'
+import './blog.scss';
 
 export default class BlogIndexPage extends React.Component {
   render() {
