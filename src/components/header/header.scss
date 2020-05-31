@@ -1,14 +1,17 @@
 
+$color: white;
+$bgcolor: #00c4cc;
 .mediumnavigation {
-	background:rgba(255,255,255,.97);
+	background:$bgcolor !important;
 	box-shadow:0 2px 2px -2px rgba(0,0,0,.15);
 	padding:10px;
 	transition:top 0.2s ease-in-out;
-	color:rgba(0,0,0,.5);
+	color:rgba(0,0,0,.5);	
 }
+
 .navbar-light .navbar-brand {
-	color: #007bff !important;
-}
+	color: $color !important;
+}	
 .navbar-light .navbar-nav .nav-link {
-    color: #007bff !important;
+	color: $color !important;
 }

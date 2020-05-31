@@ -1,5 +1,9 @@
+
+$bgColor: #00c4cc !important;
+$color: white;
 .footer {
-    background-color: #f5f5f5;
+    background: $bgColor;
+    color:$color;
     display: block;
     width: 100%;
     text-align: center;
