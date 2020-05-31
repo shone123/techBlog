@@ -11,8 +11,8 @@ export default function Template({
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
+      <h1 class="my-4">Learn Advance 
+        <small>Javascript features</small>
       </h1>    
       <div class="card mb-4">
       <Image/>
@@ -31,7 +31,7 @@ export default function Template({
       </div>
 
       <div class="card mb-4">
-        <img class="card-img-top" src="../assets/images/bootstrap-4.jpg" alt="Card image cap"/>
+        <img class="card-img-top" src="https://www.bootstrapdash.com/wp-content/uploads/2017/08/bootstrap-4-beta-whats-new.jpg" alt="Card image cap"/>
         <div class="card-body">
           <h2 class="card-title">{frontmatter.title}</h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
@@ -44,7 +44,7 @@ export default function Template({
       </div>
 
       <div class="card mb-4">
-        <img class="card-img-top" src="../assets/images/CSS.png" alt="Card image cap"/>
+        <img class="card-img-top" src="https://www.geeksforgeeks.org/wp-content/uploads/CSS-1024x341.png" alt="Card image cap"/>
         <div class="card-body">
           <h2 class="card-title">Learn CSS Grid</h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
