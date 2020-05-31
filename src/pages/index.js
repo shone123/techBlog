@@ -31,6 +31,7 @@ const IndexPage = ({children}) => {
       return(
         <div className="blog-posts">
         <Layout/>  
+        <div className="side-content col-md-8">
             {
                 posts.filter(post => post.node.frontmatter.title.length > 0)
                 .map(({ node: post }) => {
@@ -49,15 +50,15 @@ const IndexPage = ({children}) => {
                     </div>    
               );
             })}
-            <div className="side">
-                <SideBar/>            
-            </div>
-
+        </div>
+        <div className="side col-md-4">
+            <SideBar/>            
+        </div>        
             <footer className="footer">
-            © {new Date().getFullYear()}, techblog
-            {` `}
+                © {new Date().getFullYear()}, techblog
+                  {` `}
             </footer>
-        </div>    
+      </div>      
   )
 }
 
