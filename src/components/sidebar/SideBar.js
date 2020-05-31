@@ -1,10 +1,8 @@
-import { Link } from "gatsby"
+
 import React from "react"
-import { Card, Button } from 'react-bootstrap';
 import "./SideBar.scss";
 
 const SideBar =({title})=> { 
-
     return(
       <div>                     
           <div class="card">
