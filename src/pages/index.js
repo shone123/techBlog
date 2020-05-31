@@ -1,56 +1,68 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-
+import { graphql, useStaticQuery } from 'gatsby'; 
+import PropTypes from "prop-types"
+import {Card, Button} from 'react-bootstrap';
+import Layout from "../components/layout";
+import SideBar from "../components/sidebar/SideBar";
+import Link from "gatsby-link";
 import './index.scss'
 import "../styles/layout-overide.scss";
+import "../styles/_footer.scss";
 
+const IndexPage = ({children}) => {  
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            id
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { edges: posts } = data.allMarkdownRemark;
+      return(
+        <div className="blog-posts">
+        <Layout/>  
+            {
+                posts.filter(post => post.node.frontmatter.title.length > 0)
+                .map(({ node: post }) => {
+                  return (
+                    <div className="content">
+                        <Card className="mt">
+                          <Card.Header>{post.frontmatter.title}</Card.Header>
+                            <Card.Body>
+                            <Card.Title>{post.frontmatter.date}</Card.Title>
+                              <Card.Text>
+                                    {post.excerpt}
+                              </Card.Text>
+                              <Link to={post.frontmatter.path} className="btn btn-outline-primary float-right">Read More</Link>
+                            </Card.Body>
+                        </Card>
+                    </div>    
+              );
+            })}
+            <div className="side">
+                <SideBar/>            
+            </div>
 
-export default () => {
-  return (
-    <>
-    <div>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-  
-  </footer>
-
-
-</div>
-
-      Hello world!
-      <p><Link to="/blog">View Blog</Link></p>
-    </>)
+            <footer className="footer">
+            © {new Date().getFullYear()}, techblog
+            {` `}
+            </footer>
+        </div>    
+  )
 }
+
+IndexPage.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+export default IndexPage
+
