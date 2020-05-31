@@ -1,4 +1,4 @@
-  import { Link } from "gatsby"
+
   import PropTypes from "prop-types"
   import React from "react"
   import {Navbar, Nav } from 'react-bootstrap';
@@ -6,6 +6,8 @@
   class Header extends React.Component {
     render() {
       return(
+        <>
+          {/*navbar*/}
         <Navbar bg="light" expand="lg" className="mediumnavigation">
         <Navbar.Brand href="#home">techBlog</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -17,15 +19,14 @@
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      </>
       )
     }
   }
   Header.propTypes = {
     siteTitle: PropTypes.string,
   }
-
   Header.defaultProps = {
     siteTitle: ``,
   }
-
   export default Header

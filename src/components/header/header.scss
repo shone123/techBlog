@@ -8,10 +8,11 @@ $bgcolor: #00c4cc;
 	transition:top 0.2s ease-in-out;
 	color:rgba(0,0,0,.5);	
 }
-
 .navbar-light .navbar-brand {
 	color: $color !important;
+	margin-left: 35px;
 }	
 .navbar-light .navbar-nav .nav-link {
 	color: $color !important;
 }
+
