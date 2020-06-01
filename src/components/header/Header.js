@@ -3,6 +3,7 @@
   import React from "react"
   import {Navbar, Nav } from 'react-bootstrap';
   import './header.scss';
+  import { Link } from "gatsby";
   class Header extends React.Component {
     render() {
       return(
@@ -13,9 +14,8 @@
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#blog">Blog</Nav.Link>
-            <Nav.Link href="#account">Account</Nav.Link>            
+            <Link to="/blog">Blog</Link>
+            <Link to="/account">Account</Link>            
           </Nav>
         </Navbar.Collapse>
       </Navbar>

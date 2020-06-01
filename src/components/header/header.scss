@@ -12,7 +12,10 @@ $bgcolor: #00c4cc;
 	color: $color !important;
 	margin-left: 35px;
 }	
-.navbar-light .navbar-nav .nav-link {
-	color: $color !important;
+.navbar-light .navbar-nav {
+	a {
+		color: $color !important;
+		padding: 1rem;
+	}
 }
 
