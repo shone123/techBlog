@@ -5,9 +5,9 @@ import {Card} from 'react-bootstrap';
 import Layout from "../components/layout";
 import SideBar from "../components/sidebar/SideBar";
 import SEO from "../components/seo"
+import Footer from "../components/footer/Footer"
 import './index.scss'
 import "../styles/layout-overide.scss";
-import "../styles/_footer.scss";
 
 const IndexPage = (props) => {  
   const data = useStaticQuery(graphql`
@@ -35,6 +35,7 @@ const IndexPage = (props) => {
     filteredData: [],
     query: emptyQuery,
   })
+  /* search posts function */
   const handleInputChange = event => {
     console.log(event.target.value)
     const query = event.target.value
@@ -48,7 +49,7 @@ const IndexPage = (props) => {
         title.toLowerCase().includes(query.toLowerCase()) 
       )
     })
-    setState({
+    setState({ /*set state of the component*/
       query,
       filteredData,
     })
@@ -58,6 +59,7 @@ const IndexPage = (props) => {
   const posts = hasSearchResults ? filteredData : allPosts
     return(
     <>  
+    {/*all posts cards */}
       <div className="blog-posts">
         <Layout/> 
         <SEO title="Home" /> 
@@ -88,13 +90,12 @@ const IndexPage = (props) => {
                 );
             })}
         </div>
+        {/* side bar */}
         <div className="side col-md-4">
             <SideBar/>            
-        </div>        
-        <footer className="footer">
-            © {new Date().getFullYear()}, techblog
-              {` `}
-        </footer>
+        </div>  
+        {/* footer */}      
+        <Footer/>
     </div>  
   </>      
   )

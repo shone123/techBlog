@@ -1,16 +1,10 @@
 ---
-path: "/hello-world"
+path: "/html-post"
 date: "2017-07-12T17:12:33.962Z"
 title: "HTML5 features"
 description: "List of HTML5 features"
 ---
 
-Oooooh-weeee, my first blog post!
-
- First post Ipsum is a major key to success. Congratulations, you played yourself. Surround yourself with angels. Celebrate success right, the only way, apple. 
- 
- The key is to drink coconut, fresh coconut, trust me. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast.
-
- <pre><code>npm install beer --save --in-mouth</code></pre>
+HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages. Markup language is used to define the text document within tag which defines the structure of web pages. This language is used to annotate (make notes for the computer) text so that a machine can understand it and manipulate text accordingly. 
 
 

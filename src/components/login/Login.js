@@ -2,6 +2,7 @@ import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 import React from 'react';
 
+// okta authentication configuration
 const config = {
   baseUrl: 'https://dev-243535.okta.com',
   clientId: '0oadh48sdFAyEgu6v4x6',
@@ -11,6 +12,9 @@ const config = {
   authParams: {
     pkce: true,
     responseType: ['token', 'id_token']
+  },
+  features: {
+    registration: true
   }
 };
 
@@ -51,7 +55,6 @@ export default class Login extends React.Component {
           }
         });
 
-        // Say hello to the person who just signed in
         authClient.tokenManager.get('idToken').then(idToken => {
           console.log(`Hello, ${idToken.claims.name} (${idToken.claims.email})`);
           window.location.reload();

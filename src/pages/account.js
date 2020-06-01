@@ -23,6 +23,7 @@ class Account extends React.Component {
   }
 
   async componentDidMount() {
+    //generated Id token
     const token = await signIn.authClient.tokenManager.get('idToken');
     if (token) {
       this.setState({user: token.claims.name});
@@ -42,7 +43,7 @@ class Account extends React.Component {
       navigate('/');
     });
   }
-
+  //redirect back to login
   render() {
     if (!isAuthenticated()) {
       return (
